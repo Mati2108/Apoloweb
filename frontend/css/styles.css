@@ -656,16 +656,16 @@ body {
 }
 
 .cta-button {
-    background: #10131a;
+    background: #5a189a;
     color: #fff;
     border: none;
     border-radius: 50px;
     padding: 18px 48px;
     font-size: 20px;
     font-weight: 600;
-    box-shadow: 0 4px 24px rgba(45, 212, 191, 0.08);
+    box-shadow: 0 4px 24px rgba(90, 24, 154, 0.18);
     cursor: pointer;
-    transition: background 0.3s, color 0.3s, box-shadow 0.3s, filter 0.3s;
+    transition: background 0.05s, color 0.05s, box-shadow 0.05s, filter 0.05s;
     outline: none;
     margin-top: 30px;
     opacity: 1;
@@ -673,10 +673,10 @@ body {
 }
 
 .cta-button:hover {
-    background: #1a2233;
+    background: #7b2ff2;
     color: #fff;
-    filter: brightness(1.25);
-    box-shadow: 0 8px 32px rgba(45, 212, 191, 0.18);
+    filter: brightness(1.18);
+    box-shadow: 0 8px 32px rgba(90, 24, 154, 0.28);
 }
 
 /* Responsive Design */
