@@ -1072,29 +1072,8 @@ html {
 /* Responsive adjustments for products section */
 @media (max-width: 1024px) {
     .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .products-grid {
-        display: none;
-    }
-    
-    .mobile-products-grid {
-        display: grid;
         grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 10px;
-    }
-    
-    .mobile-product-card {
-        padding: 20px;
-    }
-    
-    .product-price-section {
-        padding: 12px 0;
+        gap: 24px;
     }
 }
 
