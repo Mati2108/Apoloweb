@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - KiFrames</title>
+    <meta name="description" content="Complete your KiFrames purchase securely.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="checkout-page">
+    <!-- Header -->
+    <header class="checkout-header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-diamond">
+                    <div class="diamond-inner"></div>
+                </div>
+                <span class="logo-text">KiFrames</span>
+            </div>
+            <div class="checkout-steps">
+                <div class="step completed">
+                    <span class="step-number">1</span>
+                    <span class="step-label">Cart</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step active">
+                    <span class="step-number">2</span>
+                    <span class="step-label">Checkout</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <span class="step-label">Complete</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="checkout-main">
+        <div class="checkout-container">
+            <div class="checkout-content">
+                <!-- Billing Information -->
+                <div class="billing-section">
+                    <h2 class="section-title">Billing Information</h2>
+                    
+                    <form class="billing-form" id="checkout-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company (Optional)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <select id="country" name="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="FR">France</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="OTHER">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State/Province</label>
+                                <input type="text" id="state" name="state" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zipCode">ZIP/Postal Code</label>
+                                <input type="text" id="zipCode" name="zipCode" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Street Address</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                    </form>
+                    
+                    <!-- Payment Information -->
+                    <h2 class="section-title">Payment Information</h2>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-option">
+                            <div class="method-header">
+                                <input type="radio" name="paymentMethod" value="credit-card" checked>
+                                <span>Credit/Debit Card</span>
+                                <div class="card-icons">
+                                    <span class="card-icon visa">VISA</span>
+                                    <span class="card-icon mastercard">MC</span>
+                                    <span class="card-icon amex">AMEX</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-option">
+                            <div class="method-header">
+                                <input type="radio" name="paymentMethod" value="paypal">
+                                <span>PayPal</span>
+                                <div class="paypal-logo">PayPal</div>
+                            </div>
+                        </div>
+
+                        <div class="payment-option">
+                            <div class="method-header">
+                                <input type="radio" name="paymentMethod" value="mercadopago">
+                                <span>Mercado Pago</span>
+                                <div class="mp-logo" style="background: #009ee3; color: white; padding: 6px 12px; border-radius: 6px; font-weight: 600; font-size: 14px;">MP</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Credit Card Details (Stripe Elements) -->
+                    <div id="credit-card-details" style="display: none; margin-top: 20px;">
+                        <div id="card-element">
+                            <!-- Stripe Elements will create form elements here -->
+                        </div>
+                        <div id="card-errors" role="alert"></div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <h3 class="summary-title">Order Summary</h3>
+                        
+                        <div class="order-items" id="orderItems">
+                            <!-- Items will be populated by JavaScript -->
+                        </div>
+                        
+                        <div class="summary-calculations">
+                            <div class="summary-line">
+                                <span>Subtotal</span>
+                                <span class="subtotal-amount">$25.00</span>
+                            </div>
+                            
+                            <div class="summary-line">
+                                <span>Tax</span>
+                                <span class="tax-amount">$2.50</span>
+                            </div>
+                            
+                            <div class="summary-line total-line">
+                                <span>Total</span>
+                                <span class="total-amount">$27.50</span>
+                            </div>
+                        </div>
+                        
+                        <button class="place-order-btn" type="submit">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Complete Order
+                        </button>
+                        
+                        <div class="security-badges">
+                            <div class="security-badge">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 22S8 18 8 13V6L12 4L16 6V13C16 18 12 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>SSL Secured</span>
+                            </div>
+                            <div class="security-badge">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Money Back Guarantee</span>
+                            </div>
+                        </div>
+                        
+                        <a href="cart.html" class="back-to-cart">← Back to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Payment Gateway Scripts -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    
+    <script src="../js/checkout.js"></script>
+</body>
+</html> 

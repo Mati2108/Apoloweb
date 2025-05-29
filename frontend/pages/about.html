@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>About KiFrames - Creator Tools Built by Creators | Less Chaos, More Flow</title>
+    <meta name="title" content="About KiFrames - Creator Tools Built by Creators | Less Chaos, More Flow">
+    <meta name="description" content="Meet Matías Calo (Fontane/Emeqalo), the creator behind KiFrames. Building smart media organization tools for video creators and music producers who want less chaos, more flow.">
+    <meta name="keywords" content="about kiframes, matías calo, fontane, emeqalo, creator tools, media organization, sample organizer, video management, music producer tools">
+    <meta name="author" content="Matías Calo">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kiframes.com/about">
+    <meta property="og:title" content="About KiFrames - Creator Tools Built by Creators">
+    <meta property="og:description" content="Meet the creator behind KiFrames - tools designed to help video creators and music producers organize their work and focus on creating.">
+    <meta property="og:image" content="https://kiframes.com/assets/images/about-og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kiframes.com/about">
+    <meta property="twitter:title" content="About KiFrames - Creator Tools Built by Creators">
+    <meta property="twitter:description" content="Learn about our mission to make creating easier with tools built by creators, for creators.">
+    <meta property="twitter:image" content="https://kiframes.com/assets/images/about-twitter-card.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kiframes.com/about">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "KiFrames",
+            "description": "Creator-focused tools for video editing and media organization, built by creators for creators",
+            "founder": {
+                "@type": "Person",
+                "name": "Matías Calo",
+                "alternateName": ["Fontane", "Emeqalo"],
+                "jobTitle": "Founder & Creator",
+                "description": "Music producer, content creator, and developer building tools for the creative community"
+            }
+        }
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://kiframes.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About",
+                "item": "https://kiframes.com/about"
+            }
+        ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="about-page">
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/LETRA BLANCA.png" alt="Apoloweb Logo Blanco" style="height:40px; width:auto;">
+            </div>
+            <div class="nav-tabs">
+                <a href="index.html#home" class="nav-tab" onclick="scrollToTop()">
+                    <span class="tab-icon">🏠</span>
+                    <span class="tab-text">Inicio</span>
+                </a>
+                <a href="index.html#servicios" class="nav-tab" onclick="scrollToProducts()">
+                    <span class="tab-icon">🚀</span>
+                    <span class="tab-text">Servicios</span>
+                </a>
+                <a href="about.html" class="nav-tab active">
+                    <span class="tab-icon">👥</span>
+                    <span class="tab-text">Nosotros</span>
+                </a>
+                <a href="index.html#contacto" class="nav-tab" onclick="scrollToFooter()">
+                    <span class="tab-icon">📧</span>
+                    <span class="tab-text">Contacto</span>
+                </a>
+                <a href="index.html#cotizar" class="nav-tab" onclick="handleGetStarted()">
+                    <span class="tab-icon">💰</span>
+                    <span class="tab-text">Cotizar</span>
+                </a>
+            </div>
+            <!-- Mobile Hamburger Menu -->
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav-menu">
+            <a href="index.html#home" class="mobile-nav-tab" onclick="scrollToTop(); closeMobileMenu();">
+                <span class="tab-icon">🏠</span>
+                <span class="tab-text">Inicio</span>
+            </a>
+            <a href="index.html#servicios" class="mobile-nav-tab" onclick="scrollToProducts(); closeMobileMenu();">
+                <span class="tab-icon">🚀</span>
+                <span class="tab-text">Servicios</span>
+            </a>
+            <a href="about.html" class="mobile-nav-tab active">
+                <span class="tab-icon">👥</span>
+                <span class="tab-text">Nosotros</span>
+            </a>
+            <a href="index.html#contacto" class="mobile-nav-tab" onclick="scrollToFooter(); closeMobileMenu();">
+                <span class="tab-icon">📧</span>
+                <span class="tab-text">Contacto</span>
+            </a>
+            <a href="index.html#cotizar" class="mobile-nav-tab" onclick="handleGetStarted(); closeMobileMenu();">
+                <span class="tab-icon">💰</span>
+                <span class="tab-text">Cotizar</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- About Content -->
+    <div class="about-hero">
+        <div class="hero-container">
+            <h1 class="hero-title">About KiFrames</h1>
+            <p class="hero-subtitle">Born out of frustration and necessity. Built by a creator, for creators.</p>
+        </div>
+    </div>
+
+    <div class="main-story">
+        <div class="story-content">
+            <p class="story-text">
+                KiFrames was born out of frustration and necessity. As a creator juggling music production and video editing, I constantly ran into the same problem: organizing files should be simple, but it never is. Most tools are clunky, slow, or built for someone else.
+            </p>
+            <p class="story-text highlight">
+                So I decided to build my own.
+            </p>
+            <p class="story-text">
+                KiFrames isn't backed by a big company or built in a boardroom. It's designed by a creator, for creators — tools I genuinely needed in my own workflow.
+            </p>
+            <p class="story-text">
+                We're starting small: tools that help you stay organized, move faster, and focus on what matters — creating.
+            </p>
+        </div>
+    </div>
+
+    <div class="welcome-section">
+        <div class="welcome-content">
+            <div class="welcome-layout">
+                <div class="welcome-text-side">
+                    <h2 class="welcome-title">If you're a creator like me — welcome.</h2>
+                    <p class="welcome-text">
+                        Whether you're a music producer tired of losing track of samples, a video creator drowning in media files, or any kind of creator who understands the struggle of staying organized while staying creative — these tools are made for you.
+                    </p>
+                </div>
+                <div class="welcome-photo-side">
+                    <div class="photo-container">
+                        <img src="../../assets/images/matias-photo.jpg" alt="Matías Calo - Creator of KiFrames" class="creator-photo">
+                        <p class="photo-caption">Matías Calo - Building tools for creators, by a creator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="cta-content">
+            <div class="cta-actions">
+                <a href="index.html#products" class="btn-primary">Try Our Tools</a>
+                <a href="index.html#contact" class="btn-secondary">Join the Team</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <div class="logo-diamond">
+                                <div class="diamond-inner"></div>
+                            </div>
+                            <span class="logo-text">KiFrames</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Creator-focused tools for video editing and media organization. Less chaos, more flow.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About KiFrames</a></li>
+                        <li><a href="index.html#products">Our Products</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#documentation">Documentation</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#community">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#twitter">Twitter</a></li>
+                        <li><a href="#youtube">YouTube</a></li>
+                        <li><a href="#discord">Discord</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KiFrames. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/about.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+        // Add navigation functionality for about page
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLogo = document.querySelector('.nav-logo');
+            if (navLogo) {
+                navLogo.addEventListener('click', function() {
+                    window.location.href = 'index.html';
+                });
+            }
+            
+            // Handle navigation bar background on scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.top-nav');
+                const scrolled = window.pageYOffset;
+                
+                if (scrolled > 50) {
+                    navbar.style.background = 'rgba(10, 10, 15, 0.98)';
+                    navbar.style.borderBottomColor = 'rgba(45, 212, 191, 0.2)';
+                } else {
+                    navbar.style.background = 'rgba(10, 10, 15, 0.95)';
+                    navbar.style.borderBottomColor = 'rgba(45, 212, 191, 0.1)';
+                }
+            });
+        });
+        
+        // Mobile menu functions
+        function toggleMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-nav-menu');
+            const hamburger = document.querySelector('.mobile-menu-toggle');
+            
+            if (mobileMenu && hamburger) {
+                mobileMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                
+                if (mobileMenu.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        }
+        
+        function closeMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-nav-menu');
+            const hamburger = document.querySelector('.mobile-menu-toggle');
+            
+            if (mobileMenu && hamburger) {
+                mobileMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const mobileMenu = document.querySelector('.mobile-nav-menu');
+            const hamburger = document.querySelector('.mobile-menu-toggle');
+            
+            if (mobileMenu && hamburger && mobileMenu.classList.contains('active')) {
+                if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                    closeMobileMenu();
+                }
+            }
+        });
+        
+        // Close mobile menu on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html> 

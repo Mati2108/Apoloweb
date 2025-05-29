@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - KiFrames</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/LETRA BLANCA.png" alt="Apoloweb Logo Blanco" style="height:40px; width:auto;">
+            </div>
+            <div class="nav-tabs">
+                <a href="#home" class="nav-tab active" onclick="scrollToTop()">
+                    <span class="tab-icon">🏠</span>
+                    <span class="tab-text">Inicio</span>
+                </a>
+                <a href="#servicios" class="nav-tab" onclick="scrollToProducts()">
+                    <span class="tab-icon">🚀</span>
+                    <span class="tab-text">Servicios</span>
+                </a>
+                <a href="about.html" class="nav-tab">
+                    <span class="tab-icon">👥</span>
+                    <span class="tab-text">Nosotros</span>
+                </a>
+                <a href="#contacto" class="nav-tab" onclick="scrollToFooter()">
+                    <span class="tab-icon">📧</span>
+                    <span class="tab-text">Contacto</span>
+                </a>
+                <a href="#cotizar" class="nav-tab" onclick="handleGetStarted()">
+                    <span class="tab-icon">💰</span>
+                    <span class="tab-text">Cotizar</span>
+                </a>
+            </div>
+            <!-- Mobile Hamburger Menu -->
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav-menu">
+            <a href="#home" class="mobile-nav-tab active" onclick="scrollToTop(); closeMobileMenu();">
+                <span class="tab-icon">🏠</span>
+                <span class="tab-text">Inicio</span>
+            </a>
+            <a href="#servicios" class="mobile-nav-tab" onclick="scrollToProducts(); closeMobileMenu();">
+                <span class="tab-icon">🚀</span>
+                <span class="tab-text">Servicios</span>
+            </a>
+            <a href="about.html" class="mobile-nav-tab">
+                <span class="tab-icon">👥</span>
+                <span class="tab-text">Nosotros</span>
+            </a>
+            <a href="#contacto" class="mobile-nav-tab" onclick="scrollToFooter(); closeMobileMenu();">
+                <span class="tab-icon">📧</span>
+                <span class="tab-text">Contacto</span>
+            </a>
+            <a href="#cotizar" class="mobile-nav-tab" onclick="handleGetStarted(); closeMobileMenu();">
+                <span class="tab-icon">💰</span>
+                <span class="tab-text">Cotizar</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Login Form (shown when not authenticated) -->
+    <div id="login-section" class="login-form">
+        <h2>Login to Your Account</h2>
+        <div id="auth-message"></div>
+        
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <a href="#" class="btn btn-secondary" id="show-register">Create Account</a>
+        </form>
+        
+        <!-- Registration Form -->
+        <form id="register-form" class="hidden">
+            <h3>Create New Account</h3>
+            <div class="form-group">
+                <label for="reg-firstName">First Name:</label>
+                <input type="text" id="reg-firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-lastName">Last Name:</label>
+                <input type="text" id="reg-lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-email">Email:</label>
+                <input type="email" id="reg-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-password">Password:</label>
+                <input type="password" id="reg-password" name="password" required minlength="6">
+            </div>
+            <button type="submit" class="btn">Create Account</button>
+            <a href="#" class="btn btn-secondary" id="show-login">Back to Login</a>
+        </form>
+    </div>
+
+    <!-- Dashboard (shown when authenticated) -->
+    <div id="dashboard-section" class="dashboard-container hidden">
+        <div class="dashboard-header">
+            <h1>Welcome to Your Dashboard</h1>
+            <p id="user-welcome">Loading...</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Account Information -->
+            <div class="dashboard-card">
+                <h3>👤 Account Information</h3>
+                <div id="account-info">
+                    <p><strong>Name:</strong> <span id="user-name">Loading...</span></p>
+                    <p><strong>Email:</strong> <span id="user-email">Loading...</span></p>
+                    <p><strong>Member Since:</strong> <span id="user-since">Loading...</span></p>
+                    <p><strong>Email Verified:</strong> <span id="email-verified">Loading...</span></p>
+                </div>
+                <button class="btn btn-secondary" onclick="logout()">Logout</button>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="dashboard-card">
+                <h3>📊 Quick Stats</h3>
+                <div id="quick-stats">
+                    <p><strong>Active Licenses:</strong> <span id="active-licenses">0</span></p>
+                    <p><strong>Total Purchases:</strong> <span id="total-purchases">0</span></p>
+                    <p><strong>Last Login:</strong> <span id="last-login">Loading...</span></p>
+                </div>
+                <a href="index.html" class="btn">Buy More Licenses</a>
+            </div>
+        </div>
+
+        <!-- License Keys -->
+        <div class="dashboard-card">
+            <h3>🔑 Your License Keys</h3>
+            <div id="licenses-container">
+                <p>Loading your licenses...</p>
+            </div>
+        </div>
+
+        <!-- Purchase History -->
+        <div class="dashboard-card">
+            <h3>🛒 Purchase History</h3>
+            <div id="orders-container">
+                <p>Loading your purchase history...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>KiFrames</h3>
+                <p>Organize your media files with ease</p>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#" onclick="showLicenseHelp()">License Help</a></li>
+                    <li><a href="mailto:support@kiframes.com">Contact Support</a></li>
+                    <li><a href="#" onclick="showDownloadLinks()">Download Software</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KiFrames. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/payment-integration.js"></script>
+    <script>
+        // Dashboard functionality
+        let currentUser = null;
+        let authToken = localStorage.getItem('kiframes_token');
+
+        // Check authentication on page load
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (authToken) {
+                await loadUserProfile();
+            } else {
+                showLoginSection();
+            }
+        });
+
+        // Show/hide sections
+        function showLoginSection() {
+            document.getElementById('login-section').classList.remove('hidden');
+            document.getElementById('dashboard-section').classList.add('hidden');
+            document.getElementById('auth-link').textContent = 'Login';
+        }
+
+        function showDashboardSection() {
+            document.getElementById('login-section').classList.add('hidden');
+            document.getElementById('dashboard-section').classList.remove('hidden');
+            document.getElementById('auth-link').textContent = 'Logout';
+        }
+
+        // Load user profile
+        async function loadUserProfile() {
+            try {
+                const response = await fetch('/api/auth/profile', {
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    currentUser = data.user;
+                    displayUserInfo();
+                    await loadUserLicenses();
+                    await loadUserOrders();
+                    showDashboardSection();
+                } else {
+                    // Token invalid
+                    localStorage.removeItem('kiframes_token');
+                    authToken = null;
+                    showLoginSection();
+                }
+            } catch (error) {
+                console.error('Failed to load profile:', error);
+                showLoginSection();
+            }
+        }
+
+        // Display user information
+        function displayUserInfo() {
+            document.getElementById('user-welcome').textContent = `Hello, ${currentUser.firstName}!`;
+            document.getElementById('user-name').textContent = `${currentUser.firstName} ${currentUser.lastName}`;
+            document.getElementById('user-email').textContent = currentUser.email;
+            document.getElementById('user-since').textContent = new Date(currentUser.createdAt).toLocaleDateString();
+            document.getElementById('email-verified').textContent = currentUser.isEmailVerified ? '✅ Verified' : '❌ Not Verified';
+            document.getElementById('last-login').textContent = currentUser.lastLogin ? new Date(currentUser.lastLogin).toLocaleDateString() : 'First time';
+        }
+
+        // Load user licenses
+        async function loadUserLicenses() {
+            try {
+                const response = await fetch('/api/auth/licenses', {
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    displayLicenses(data.licenses);
+                    document.getElementById('active-licenses').textContent = data.activeLicenses.length;
+                }
+            } catch (error) {
+                console.error('Failed to load licenses:', error);
+                document.getElementById('licenses-container').innerHTML = '<p>Failed to load licenses</p>';
+            }
+        }
+
+        // Display licenses
+        function displayLicenses(licenses) {
+            const container = document.getElementById('licenses-container');
+            
+            if (licenses.length === 0) {
+                container.innerHTML = '<p>No licenses found. <a href="index.html">Purchase KiFrames</a> to get your first license!</p>';
+                return;
+            }
+
+            let html = '';
+            licenses.forEach(license => {
+                html += `
+                    <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin: 15px 0;">
+                        <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 10px;">
+                            <h4 style="margin: 0;">${license.productName}</h4>
+                            <span class="license-status status-${license.status}">${license.status}</span>
+                        </div>
+                        <div class="license-key">${license.licenseKey}</div>
+                        <div style="font-size: 14px; color: #666;">
+                            <p><strong>Purchase Date:</strong> ${new Date(license.purchaseDate).toLocaleDateString()}</p>
+                            <p><strong>Order ID:</strong> ${license.orderId}</p>
+                            <p><strong>Activations:</strong> ${license.activationCount}/${license.maxActivations}</p>
+                            ${license.amount ? `<p><strong>Amount:</strong> $${license.amount} ${license.currency}</p>` : ''}
+                        </div>
+                        <button class="btn" onclick="copyLicenseKey('${license.licenseKey}')">Copy License Key</button>
+                        <button class="btn btn-secondary" onclick="showActivationHelp('${license.licenseKey}')">Activation Help</button>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // Load user orders
+        async function loadUserOrders() {
+            try {
+                const response = await fetch('/api/orders/user/orders', {
+                    headers: {
+                        'Authorization': `Bearer ${authToken}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    displayOrders(data.orders);
+                    document.getElementById('total-purchases').textContent = data.orders.length;
+                }
+            } catch (error) {
+                console.error('Failed to load orders:', error);
+                document.getElementById('orders-container').innerHTML = '<p>Failed to load purchase history</p>';
+            }
+        }
+
+        // Display orders
+        function displayOrders(orders) {
+            const container = document.getElementById('orders-container');
+            
+            if (orders.length === 0) {
+                container.innerHTML = '<p>No purchases yet.</p>';
+                return;
+            }
+
+            let html = '<table style="width: 100%; border-collapse: collapse;">';
+            html += '<tr style="background: #f8f9fa;"><th style="padding: 10px; border: 1px solid #ddd;">Order ID</th><th style="padding: 10px; border: 1px solid #ddd;">Date</th><th style="padding: 10px; border: 1px solid #ddd;">Amount</th><th style="padding: 10px; border: 1px solid #ddd;">Status</th></tr>';
+            
+            orders.forEach(order => {
+                html += `
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">${order.orderId}</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">${new Date(order.createdAt).toLocaleDateString()}</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">$${order.total}</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;"><span class="license-status status-${order.status}">${order.status}</span></td>
+                    </tr>
+                `;
+            });
+            
+            html += '</table>';
+            container.innerHTML = html;
+        }
+
+        // Authentication forms
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: formData.get('email'),
+                        password: formData.get('password')
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    authToken = data.token;
+                    localStorage.setItem('kiframes_token', authToken);
+                    currentUser = data.user;
+                    showMessage('Login successful!', 'success');
+                    await loadUserProfile();
+                } else {
+                    showMessage(data.error || 'Login failed', 'error');
+                }
+            } catch (error) {
+                showMessage('Login failed: ' + error.message, 'error');
+            }
+        });
+
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: formData.get('email'),
+                        password: formData.get('password'),
+                        firstName: formData.get('firstName'),
+                        lastName: formData.get('lastName')
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    authToken = data.token;
+                    localStorage.setItem('kiframes_token', authToken);
+                    currentUser = data.user;
+                    showMessage('Account created successfully!', 'success');
+                    await loadUserProfile();
+                } else {
+                    showMessage(data.error || 'Registration failed', 'error');
+                }
+            } catch (error) {
+                showMessage('Registration failed: ' + error.message, 'error');
+            }
+        });
+
+        // Toggle between login and register forms
+        document.getElementById('show-register').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('register-form').classList.remove('hidden');
+        });
+
+        document.getElementById('show-login').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('register-form').classList.add('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
+        });
+
+        // Utility functions
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('auth-message');
+            messageDiv.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 5000);
+        }
+
+        function logout() {
+            localStorage.removeItem('kiframes_token');
+            authToken = null;
+            currentUser = null;
+            showLoginSection();
+            showMessage('Logged out successfully', 'success');
+        }
+
+        function copyLicenseKey(licenseKey) {
+            navigator.clipboard.writeText(licenseKey).then(() => {
+                alert('License key copied to clipboard!');
+            });
+        }
+
+        function showActivationHelp(licenseKey) {
+            alert(`To activate KiFrames with license key ${licenseKey}:\n\n1. Download and install KiFrames Media Organizer\n2. Launch the application\n3. Enter this license key when prompted\n4. Click "Activate"\n\nNeed help? Contact support@kiframes.com`);
+        }
+
+        function showLicenseHelp() {
+            alert('License Help:\n\n• Each license allows activation on up to 3 devices\n• License keys are tied to your account\n• Contact support if you need to reset activations\n• Keep your license key safe - you\'ll need it for reinstallation');
+        }
+
+        function showDownloadLinks() {
+            alert('Download KiFrames Media Organizer:\n\n• Windows: Coming soon\n• macOS: Coming soon\n• Linux: Coming soon\n\nCheck your email for download links after purchase.');
+        }
+    </script>
+</body>
+</html> 
