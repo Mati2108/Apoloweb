@@ -409,6 +409,8 @@
     transform: translateY(-1px);
 }
 
+/* Todas las reglas de navegación han sido eliminadas para dejar solo los estilos globales */
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .about-page {
@@ -542,6 +544,26 @@
         padding: 20px 0 25px 0;
         text-align: center;
     }
+
+    .nav-tabs {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .about-page {
+        padding-top: 60px;
+    }
+
+    .nav-container {
+        padding: 12px 15px;
+    }
+
+    .nav-logo img {
+        height: 35px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -617,25 +639,28 @@
         font-size: 12px;
         margin: 8px 0 0 0;
     }
-    
-    .btn-primary,
-    .btn-secondary {
-        padding: 12px 20px;
+
+    .mobile-nav-tab {
+        padding: 12px 15px;
         font-size: 15px;
-        text-align: center;
-        margin: 0 auto;
     }
-    
-    .about-hero,
-    .main-story,
-    .welcome-section {
-        padding: 40px 0 15px 0;
-        text-align: center;
+
+    .about-page {
+        padding-top: 50px;
     }
-    
-    .cta-section {
-        padding: 15px 0 20px 0;
-        text-align: center;
+
+    .nav-container {
+        padding: 10px 12px;
+    }
+
+    .nav-logo img {
+        height: 30px;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-menu-toggle {
+        display: none;
     }
 }
 
@@ -661,4 +686,42 @@
     overflow: hidden;
     cursor: pointer;
     border: 1px solid transparent;
-} 
+}
+
+/* --- FIX FOR HAMBURGER MENU ON ABOUT PAGE --- */
+@media (max-width: 768px) {
+  .nav-tabs {
+    display: none !important;
+  }
+  .mobile-menu-toggle {
+    display: flex !important;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  .mobile-nav-menu {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 15, 0.98);
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    z-index: 999;
+  }
+  .mobile-nav-menu.active {
+    display: flex !important;
+  }
+}
+@media (min-width: 769px) {
+  .mobile-menu-toggle,
+  .mobile-nav-menu {
+    display: none !important;
+  }
+  .nav-tabs {
+    display: flex !important;
+  }
+}
+

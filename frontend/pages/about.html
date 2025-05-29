@@ -85,11 +85,11 @@
                 <img src="/LETRA BLANCA.png" alt="Apoloweb Logo Blanco" style="height:40px; width:auto;">
             </div>
             <div class="nav-tabs">
-                <a href="index.html#home" class="nav-tab" onclick="scrollToTop()">
+                <a href="index.html" class="nav-tab">
                     <span class="tab-icon">🏠</span>
                     <span class="tab-text">Inicio</span>
                 </a>
-                <a href="index.html#servicios" class="nav-tab" onclick="scrollToProducts()">
+                <a href="index.html#servicios" class="nav-tab">
                     <span class="tab-icon">🚀</span>
                     <span class="tab-text">Servicios</span>
                 </a>
@@ -97,17 +97,13 @@
                     <span class="tab-icon">👥</span>
                     <span class="tab-text">Nosotros</span>
                 </a>
-                <a href="index.html#contacto" class="nav-tab" onclick="scrollToFooter()">
-                    <span class="tab-icon">📧</span>
-                    <span class="tab-text">Contacto</span>
-                </a>
                 <a href="index.html#cotizar" class="nav-tab" onclick="handleGetStarted()">
                     <span class="tab-icon">💰</span>
                     <span class="tab-text">Cotizar</span>
                 </a>
             </div>
             <!-- Mobile Hamburger Menu -->
-            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            <div class="mobile-menu-toggle">
                 <div class="hamburger-line"></div>
                 <div class="hamburger-line"></div>
                 <div class="hamburger-line"></div>
@@ -115,11 +111,11 @@
         </div>
         <!-- Mobile Navigation Menu -->
         <div class="mobile-nav-menu">
-            <a href="index.html#home" class="mobile-nav-tab" onclick="scrollToTop(); closeMobileMenu();">
+            <a href="index.html" class="mobile-nav-tab">
                 <span class="tab-icon">🏠</span>
                 <span class="tab-text">Inicio</span>
             </a>
-            <a href="index.html#servicios" class="mobile-nav-tab" onclick="scrollToProducts(); closeMobileMenu();">
+            <a href="index.html#servicios" class="mobile-nav-tab">
                 <span class="tab-icon">🚀</span>
                 <span class="tab-text">Servicios</span>
             </a>
@@ -127,11 +123,7 @@
                 <span class="tab-icon">👥</span>
                 <span class="tab-text">Nosotros</span>
             </a>
-            <a href="index.html#contacto" class="mobile-nav-tab" onclick="scrollToFooter(); closeMobileMenu();">
-                <span class="tab-icon">📧</span>
-                <span class="tab-text">Contacto</span>
-            </a>
-            <a href="index.html#cotizar" class="mobile-nav-tab" onclick="handleGetStarted(); closeMobileMenu();">
+            <a href="index.html#cotizar" class="mobile-nav-tab">
                 <span class="tab-icon">💰</span>
                 <span class="tab-text">Cotizar</span>
             </a>
@@ -250,79 +242,6 @@
         </div>
     </footer>
 
-    <script src="../js/about.js"></script>
-    <script src="../js/cart.js"></script>
-    <script>
-        // Add navigation functionality for about page
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLogo = document.querySelector('.nav-logo');
-            if (navLogo) {
-                navLogo.addEventListener('click', function() {
-                    window.location.href = 'index.html';
-                });
-            }
-            
-            // Handle navigation bar background on scroll
-            window.addEventListener('scroll', function() {
-                const navbar = document.querySelector('.top-nav');
-                const scrolled = window.pageYOffset;
-                
-                if (scrolled > 50) {
-                    navbar.style.background = 'rgba(10, 10, 15, 0.98)';
-                    navbar.style.borderBottomColor = 'rgba(45, 212, 191, 0.2)';
-                } else {
-                    navbar.style.background = 'rgba(10, 10, 15, 0.95)';
-                    navbar.style.borderBottomColor = 'rgba(45, 212, 191, 0.1)';
-                }
-            });
-        });
-        
-        // Mobile menu functions
-        function toggleMobileMenu() {
-            const mobileMenu = document.querySelector('.mobile-nav-menu');
-            const hamburger = document.querySelector('.mobile-menu-toggle');
-            
-            if (mobileMenu && hamburger) {
-                mobileMenu.classList.toggle('active');
-                hamburger.classList.toggle('active');
-                
-                if (mobileMenu.classList.contains('active')) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = 'auto';
-                }
-            }
-        }
-        
-        function closeMobileMenu() {
-            const mobileMenu = document.querySelector('.mobile-nav-menu');
-            const hamburger = document.querySelector('.mobile-menu-toggle');
-            
-            if (mobileMenu && hamburger) {
-                mobileMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            const mobileMenu = document.querySelector('.mobile-nav-menu');
-            const hamburger = document.querySelector('.mobile-menu-toggle');
-            
-            if (mobileMenu && hamburger && mobileMenu.classList.contains('active')) {
-                if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-                    closeMobileMenu();
-                }
-            }
-        });
-        
-        // Close mobile menu on window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                closeMobileMenu();
-            }
-        });
-    </script>
+    <script src="../js/script.js"></script>
 </body>
 </html> 

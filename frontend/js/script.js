@@ -106,15 +106,15 @@ document.addEventListener('keydown', function(e) {
 // Add focus styles for accessibility
 document.addEventListener('DOMContentLoaded', function() {
     const button = document.querySelector('.cta-button');
-    
-    button.addEventListener('focus', function() {
-        this.style.outline = '2px solid #2dd4bf';
-        this.style.outlineOffset = '4px';
-    });
-    
-    button.addEventListener('blur', function() {
-        this.style.outline = 'none';
-    });
+    if (button) {
+        button.addEventListener('focus', function() {
+            this.style.outline = '2px solid #2dd4bf';
+            this.style.outlineOffset = '4px';
+        });
+        button.addEventListener('blur', function() {
+            this.style.outline = 'none';
+        });
+    }
 });
 
 // Animate products on scroll
@@ -553,6 +553,12 @@ window.addEventListener('resize', function() {
 // Handle mobile menu links
 document.addEventListener('DOMContentLoaded', function() {
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-tab');
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    
+    // Add click handler for mobile menu toggle
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    }
     
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', function(e) {
