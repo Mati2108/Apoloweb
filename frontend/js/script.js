@@ -28,7 +28,7 @@ function handleGetStarted(serviceId = null) {
     const encodedMessage = encodeURIComponent(message);
     
     // WhatsApp number (replace with your actual number)
-    const whatsappNumber = '5491123456789';
+    const whatsappNumber = '5491130032002';
     
     // Create WhatsApp URL
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -593,7 +593,7 @@ const serviceData = {
     'ai-agent': {
         title: '🤖 Secretario IA Personalizado',
         subtitle: 'Asistente virtual inteligente para tu negocio',
-        price: 25,
+        price: 50,
         description: 'Implementamos un secretario virtual con IA que gestiona tu agenda, responde consultas y automatiza tareas administrativas. Tu asistente personal disponible 24/7 para optimizar la gestión de tu negocio.',
         features: [
             'Gestión automática de agenda y citas',
