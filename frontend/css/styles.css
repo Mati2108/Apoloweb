@@ -526,11 +526,14 @@ body {
 }
 
 .main-content {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
     position: relative;
     z-index: 2;
     text-align: center;
-    max-width: 800px;
-    padding: 0 20px;
 }
 
 .logo-container {
@@ -538,11 +541,11 @@ body {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 .logo-diamond {
@@ -574,7 +577,8 @@ body {
 }
 
 .hero-section {
-    margin-top: 40px;
+    margin-top: 24px;
+    padding-bottom: 16px;
 }
 
 .hero-title {
@@ -656,6 +660,12 @@ body {
 }
 
 .cta-button {
+    margin-top: 18px;
+    width: 100%;
+    max-width: 340px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     background: #5a189a;
     color: #fff;
     border: none;
@@ -667,7 +677,6 @@ body {
     cursor: pointer;
     transition: background 0.01s, color 0.01s, box-shadow 0.01s, filter 0.01s;
     outline: none;
-    margin-top: 30px;
     opacity: 1;
     transform: translateY(0px);
 }
@@ -732,7 +741,19 @@ body {
     }
     
     .main-content {
-        padding: 0 15px;
+        padding: 0 4px;
+    }
+    .logo {
+        padding: 0 2px;
+    }
+    .hero-section {
+        margin-top: 10px;
+        padding-bottom: 8px;
+    }
+    .cta-button {
+        margin-top: 10px;
+        font-size: 17px;
+        padding: 14px 10px;
     }
 }
 
