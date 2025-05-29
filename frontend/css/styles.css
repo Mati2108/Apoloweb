@@ -1794,4 +1794,15 @@ html {
         gap: 20px;
         text-align: center;
     }
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+.main-content, .container, .products-section, .products-container, .products-grid {
+    max-width: 100vw;
+    box-sizing: border-box;
+    word-break: break-word;
 } 
