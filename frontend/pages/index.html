@@ -244,7 +244,7 @@
                             </div>
                         </div>
                         <!-- Service Card 2 - AI Agent -->
-                        <div class="product-card" data-product-id="ai-agent" style="opacity: 1; transform: translateY(0px); transition: 0.3s; cursor: pointer;" onclick="openProductDetail('ai-agent')">
+                        <div class="product-card" data-product-id="ai-agent" style="opacity: 1; transform: translateY(0px); transition: 0.3s;">
                             <div class="product-content">
                                 <h3 class="product-title">🤖 Secretario IA Personalizado</h3>
                                 <p class="product-subtitle">Asistente virtual inteligente para tu negocio</p>
@@ -254,12 +254,20 @@
                                     </div>
                                     <span class="rating-text">5.0 (NUEVO)</span>
                                 </div>
-                                <p class="product-description">Implementamos un secretario virtual con IA que gestiona tu agenda, responde consultas y automatiza tareas administrativas. Tu asistente personal disponible 24/7. <strong>Servicio mensual.</strong></p>
+                                <p class="product-description">Implementamos un secretario virtual con IA que gestiona tu agenda, responde consultas y automatiza tareas administrativas. Tu asistente personal disponible 24/7.</p>
                                 <div class="product-price-section">
-                                    <div class="product-price">
-                                        <span class="price-amount">60.000</span>
-                                        <span class="price-currency">ARS</span>
-                                        <span class="price-period">/mes</span>
+                                    <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 15px;">
+                                        <div class="product-price">
+                                            <span class="price-amount">120.000</span>
+                                            <span class="price-currency">ARS</span>
+                                            <span class="price-period">inicial</span>
+                                        </div>
+                                        <span style="color: #666;">+</span>
+                                        <div class="product-price">
+                                            <span class="price-amount">48.000</span>
+                                            <span class="price-currency">ARS</span>
+                                            <span class="price-period">/mes</span>
+                                        </div>
                                     </div>
                                     <button class="product-button" onclick="openProductDetail('ai-agent')">Solicitar Cotización</button>
                                 </div>
@@ -326,25 +334,6 @@
                     </div>
                 </div>
                 <p class="service-modal-subtitle"></p>
-                
-                <!-- Gallery Section -->
-                <div class="gallery-section">
-                    <div class="gallery-main">
-                        <img src="" alt="Service Image" class="gallery-main-image">
-                        <button class="gallery-control prev" onclick="prevGalleryImage()">❮</button>
-                        <button class="gallery-control next" onclick="nextGalleryImage()">❯</button>
-                    </div>
-                    <div class="gallery-thumbnails"></div>
-                </div>
-                
-                <!-- Video Section -->
-                <div class="video-section">
-                    <h3>Video Demostrativo</h3>
-                    <video class="service-video-player" controls>
-                        <source src="" type="video/mp4">
-                        Tu navegador no soporta el elemento de video.
-                    </video>
-                </div>
                 
                 <!-- Description Section -->
                 <div class="description-section">

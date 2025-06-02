@@ -154,15 +154,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Product Detail Modal Functions
-function openProductDetail(productId) {
-    const modal = document.getElementById('productDetailModal');
+//function openProductDetail(productId) {
+//    const modal = document.getElementById('productDetailModal');
+//    
+//    // Update modal content based on product ID
+//    updateModalContent(productId);
     
-    // Update modal content based on product ID
-    updateModalContent(productId);
-    
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-}
+//    modal.classList.add('active');
+//    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+//}
 
 function updateModalContent(productId) {
     const products = {
@@ -236,14 +236,14 @@ document.addEventListener('click', function(e) {
     const mobileProductCard = e.target.closest('.mobile-product-card');
     const isButton = e.target.classList.contains('product-button');
     
-    // Handle desktop product cards
-    if (productCard && !isButton) {
-        e.preventDefault();
+    // // Handle desktop product cards
+    // if (productCard && !isButton) {
+    //     e.preventDefault();
         
-        // Get product ID and open modal
-        const productId = productCard.getAttribute('data-product-id');
-        openProductDetail(productId);
-    }
+    //     // Get product ID and open modal
+    //     const productId = productCard.getAttribute('data-product-id');
+    //     openProductDetail(productId);
+    // }
     
     // Handle mobile product cards
     if (mobileProductCard && !isButton) {
@@ -681,19 +681,19 @@ function openServiceDetail(serviceId) {
         `<li>${feature}</li>`
     ).join('');
     
-    // Update gallery
-    const mainImage = document.querySelector('.gallery-main-image');
-    const thumbnails = document.querySelector('.gallery-thumbnails');
+    // // Update gallery
+    // const mainImage = document.querySelector('.gallery-main-image');
+    // const thumbnails = document.querySelector('.gallery-thumbnails');
     
-    mainImage.src = service.gallery[0];
-    thumbnails.innerHTML = service.gallery.map((img, index) => 
-        `<img src="${img}" alt="Thumbnail ${index + 1}" class="gallery-thumbnail ${index === 0 ? 'active' : ''}" onclick="changeGalleryImage(${index})">`
-    ).join('');
+    // mainImage.src = service.gallery[0];
+    // thumbnails.innerHTML = service.gallery.map((img, index) => 
+    //     `<img src="${img}" alt="Thumbnail ${index + 1}" class="gallery-thumbnail ${index === 0 ? 'active' : ''}" onclick="changeGalleryImage(${index})">`
+    // ).join('');
     
-    // Update video
-    const video = document.querySelector('.service-video-player source');
-    video.src = service.video;
-    video.parentElement.load();
+    // // Update video
+    // const video = document.querySelector('.service-video-player source');
+    // video.src = service.video;
+    // video.parentElement.load();
     
     // Show modal
     modal.classList.add('active');
